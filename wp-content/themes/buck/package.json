@@ -1,0 +1,28 @@
+{
+  "name": "buck",
+  "version": "1.0.0",
+  "description": "Buck Productions Website",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^1.2.1"
+  },
+  "devDependencies": {
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^1.2.1"
+  },
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/broadviewstation/bproductions"
+  },
+  "author": "5pin Design",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/broadviewstation/bproductions/issues"
+  },
+  "homepage": "https://github.com/broadviewstation/bproductions#readme"
+}
