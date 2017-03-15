@@ -65,3 +65,29 @@ return count( $comments_by_type['comment'] );
 return $count;
 }
 }
+function raymondjames_scripts() {
+    wp_enqueue_style( 'style', get_template_directory_uri() . '/code/css/style.css', array(), true );
+    wp_enqueue_style( 'catamaran font', 'https://fonts.googleapis.com/css?family=Catamaran:300,400,500,700', array(),  true );
+    wp_enqueue_style( 'ilightbox style', get_template_directory_uri() .'/code/js/ilightbox/src/css/ilightbox.css', array(),  true );
+    wp_enqueue_script( 'font awesome', 'https://use.fontawesome.com/2055193320.js', array(),  true );
+    wp_enqueue_script( 'jquery migrate', 'https://code.jquery.com/jquery-migrate-1.4.1.js', array(),  true );
+/*
+    wp_enqueue_script( 'fancybox', get_template_directory_uri() . '/code/js/fancybox/source/jquery.fancybox.js', array(),  true );
+    wp_enqueue_script( 'fancybox media', get_template_directory_uri() . '/code/js/fancybox/source/helpers/jquery.fancybox-media.js', array(),  true );
+    wp_enqueue_style( 'fancybox style', get_template_directory_uri() .'/code/js/fancybox/source/jquery.fancybox.css', array(),  true );
+*/
+    wp_enqueue_script( 'expander', get_template_directory_uri() . '/code/js/jquery.expander.min.js', array(),  true );
+    wp_enqueue_script( 'match height', get_template_directory_uri() . '/code/js/jquery.matchHeight-min.js', array(),  true );
+    wp_enqueue_script( 'smooth scroll', get_template_directory_uri() . '/code/js/smooth-scroll.js', array(),  true );
+    wp_enqueue_script( 'waypoints', get_template_directory_uri() . '/code/js/noframework.waypoints.min.js', array(),  true );
+    wp_enqueue_script( 'custom script', get_template_directory_uri() . '/code/js/custom.js', array(),  true );
+    wp_enqueue_script( 'ajax filter', get_template_directory_uri() . '/code/js/ajax-filter.js', array(),  true );
+    wp_enqueue_script( 'vimeo controls', get_template_directory_uri() . '/code/js/Vimeo-jQuery-API/dist/jquery.vimeo.api.min.js', array(),  true );
+}
+add_action( 'wp_enqueue_scripts', 'raymondjames_scripts' );
+
+add_action('init', 'remove_content_editor');
+
+function remove_content_editor() {
+    remove_post_type_support( 'page', 'editor' );
+}
