@@ -114,7 +114,7 @@ $(window).resize(function() {
     }
 
     if ($("#four-image-band").length) {
-      var twoCol = new Waypoint({
+      var fourImg = new Waypoint({
         element: document.getElementById('four-image-waypoint'),
         handler: function(direction) {
           if (direction === "down") {
@@ -130,13 +130,13 @@ $(window).resize(function() {
             });
           }
           this.destroy()
-        },
+        }, offset: 'bottom-in-view'
 
       });    
     }
     
     if ($("#locations-waypoint").length) {
-      var parallax = new Waypoint({
+      var locations = new Waypoint({
         element: document.getElementById('locations-waypoint'),
         handler: function(direction) {
           if (direction === "down") {
@@ -159,7 +159,7 @@ $(window).resize(function() {
     }
 
     if ($("#footer-text").length) {
-      var parallax = new Waypoint({
+      var footer = new Waypoint({
         element: document.getElementById('footer-text-waypoint'),
         handler: function(direction) {
           if (direction === "down") {

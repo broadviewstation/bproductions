@@ -1,8 +1,8 @@
 <div class="clear"></div>
 </div>
 <footer id="footer" role="contentinfo">
-<h3><?php echo get_field('footer_headline'); ?></h3>
 <div id="locations">
+<h3><?php echo get_field('footer_headline'); ?></h3>
   <?php
     if( have_rows('locations') ):
       while( have_rows('locations') ) : the_row();

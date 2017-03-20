@@ -128,7 +128,7 @@
   }
   
   .two-col {
-    
+    float: left;
     .col-one {
       width: 41.333334%;
       float: left;
@@ -163,7 +163,11 @@
   }
   
   #four-image-band {
-    float: left;
+    clear: both;
+    #four-image-waypoint {
+      float: left;
+      clear: both;
+    }
     img {
       width: 25%;
       display: none;

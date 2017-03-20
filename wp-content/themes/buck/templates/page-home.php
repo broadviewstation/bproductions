@@ -63,6 +63,7 @@
     </div>
   </div>
   <div id="four-image-band">
+      <div id="four-image-waypoint"></div>
       <?php
         if( have_rows('images') ):
           while( have_rows('images') ) : the_row();
@@ -71,7 +72,6 @@
           endwhile;
         endif;
       ?>
-      <div id="four-image-waypoint"></div>
 
   </div>
 <?php get_footer(); ?>
