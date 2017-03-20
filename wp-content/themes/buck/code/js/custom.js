@@ -51,5 +51,132 @@ $(window).resize(function() {
       $('.hero-image').show('slow');
     });
 
+  // match height
+  
+      $('.two-col .col').matchHeight();
+      $('#four-image-band div').matchHeight();
+
+
+  // waypoints
+  
+    if ($("#parallax-region").length) {
+      var parallax = new Waypoint({
+        element: document.getElementById('parallax-waypoint'),
+        handler: function(direction) {
+          if (direction === "down") {
+            console.log('down');
+            $('#parallax-region .parallax-text p').animate({
+              margin: 0,
+              opacity: 1,
+            }, 1000, function() {
+              // Animation complete.
+            });
+          }
+        }, offset: 'bottom-in-view'
+
+      });    
+    }
+
+    if ($("#two-col-waypoint").length) {
+      var twoCol = new Waypoint({
+        element: document.getElementById('two-col-waypoint'),
+        handler: function(direction) {
+          if (direction === "down") {
+            $('#col-margin').animate({
+              margin: 0,
+              opacity: 1,
+            }, 800, function() {
+              // Animation complete.
+            });
+            $('.col-one.col').animate({
+              height: '-=100px',
+            }, 800, function() {
+              // Animation complete.
+            });
+
+            $('#logo-grid-margin').animate({
+              margin: 0,
+              opacity: 1,
+            }, 800, function() {
+              // Animation complete.
+            });
+            $('.col-two.col').animate({
+              height: '-=100px',
+            }, 800, function() {
+              // Animation complete.
+            });
+
+          }
+          this.destroy()
+        }, offset: 'bottom-in-view'
+
+      });    
+    }
+
+    if ($("#four-image-band").length) {
+      var twoCol = new Waypoint({
+        element: document.getElementById('four-image-waypoint'),
+        handler: function(direction) {
+          if (direction === "down") {
+            console.log('test');
+            $(".four-img").each(function(i){
+                var img = $(this);
+                setTimeout(function(){
+                img.animate({
+                  opacity: 1,
+                  display: "toggle"
+                  }, {duration: 600, queue: false}).addClass('visible')
+                },i*100);
+            });
+          }
+          this.destroy()
+        },
+
+      });    
+    }
+    
+    if ($("#locations-waypoint").length) {
+      var parallax = new Waypoint({
+        element: document.getElementById('locations-waypoint'),
+        handler: function(direction) {
+          if (direction === "down") {
+            $('#locations').animate({
+              padding: 0,
+              opacity: 1,
+              margin: 0,
+            }, 1000, function() {
+              // Animation complete.
+            });
+            $('.location').animate({
+              opacity: 1
+            }, 2000, function() {
+              // Animation complete.
+            });
+          }
+        }, offset: 'bottom-in-view'
+
+      });    
+    }
+
+    if ($("#footer-text").length) {
+      var parallax = new Waypoint({
+        element: document.getElementById('footer-text-waypoint'),
+        handler: function(direction) {
+          if (direction === "down") {
+            $('#footer-text p').animate({
+              padding: 0,
+              opacity: 1,
+            }, 1000, function() {
+              // Animation complete.
+            });
+          }
+        }, offset: 'bottom-in-view'
+
+      });    
+    }
+
+
+
+
   });
 })(jQuery);

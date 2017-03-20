@@ -86,8 +86,10 @@ function raymondjames_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'raymondjames_scripts' );
 
+/*
 add_action('init', 'remove_content_editor');
 
 function remove_content_editor() {
     remove_post_type_support( 'page', 'editor' );
 }
+*/
