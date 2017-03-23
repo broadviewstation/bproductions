@@ -2,10 +2,10 @@
 </div>
 <footer id="footer" role="contentinfo">
 <div id="locations">
-<h3><?php echo get_field('footer_headline'); ?></h3>
+<h3><?php echo get_field('footer_headline', 5); ?></h3>
   <?php
-    if( have_rows('locations') ):
-      while( have_rows('locations') ) : the_row();
+    if( have_rows('locations', 5) ):
+      while( have_rows('locations', 5) ) : the_row();
         $address = get_sub_field('address');
         $phoneNums = "";
         if( have_rows('phone_numbers') ):

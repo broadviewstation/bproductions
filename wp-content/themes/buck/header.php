@@ -33,5 +33,34 @@
     ?>
   </div>
 </nav>
+<ul id="filter-nav">
+  <?php
+    echo '<li><button class="button is-checked" data-filter="*">All</button></li>';
+    $categories = get_field('project_categories', 11);
+    foreach( $categories as $category ) :
+      echo '<li><button class="button" data-filter=".'.$category->slug.'">'.$category->name.'</button></li>';
+        
+    endforeach;
+    wp_reset_postdata();
+
+  ?>
+</ul>
+
+<ul id="filter-nav-mobile">
+  <li class="first"><span>Choose service</span>
+    <ul>
+      <?php
+        echo '<li><button class="button" data-filter="*">All</button></li>';
+        $categories = get_field('project_categories', 11);
+        foreach( $categories as $category ) :
+          echo '<li><button class="button" data-filter=".'.$category->slug.'">'.$category->name.'</button></li>';
+            
+        endforeach;
+        wp_reset_postdata();
+      ?>
+    </ul>
+  </li>
+</ul>
+
 </header>
 <div id="container">

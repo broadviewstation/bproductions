@@ -175,6 +175,38 @@ $(window).resize(function() {
       });    
     }
 
+  // portfolio tiles
+  // init Isotope
+    if (!$('.home').length) {
+      var $grid = $('.grid').isotope();    
+    }
+    // filter items on button click
+    $('#filter-nav').on( 'click', 'button', function() {
+      var filterValue = $(this).attr('data-filter');
+      $grid.isotope({ filter: filterValue });
+    });
+
+    $('#filter-nav').each( function( i, buttonGroup ) {
+      var $buttonGroup = $( buttonGroup );
+      $buttonGroup.on( 'click', 'button', function() {
+        $buttonGroup.find('.is-checked').removeClass('is-checked');
+        $( this ).addClass('is-checked');
+      });
+    });
+
+    $('#filter-nav-mobile').on( 'click', 'button', function() {
+      var filterValue = $(this).attr('data-filter');
+      $grid.isotope({ filter: filterValue });
+    });
+
+    $('#filter-nav-mobile').each( function( i, buttonGroup ) {
+      var $buttonGroup = $( buttonGroup );
+      $buttonGroup.on( 'click', 'button', function() {
+        $buttonGroup.find('.is-checked').removeClass('is-checked');
+        $( this ).addClass('is-checked');
+      });
+    });
+
 
 
 

@@ -7,12 +7,22 @@ body {
   font-weight: 300;
 }
 
+#container {
+  clear: both;
+}
+
 //nav
 
+#header {
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+}
 
 #menu {
   float: left;
   width: 100%;
+  background-color: #fff;
 
   .nav-left {
     float: left;
